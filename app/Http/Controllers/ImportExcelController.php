@@ -18,7 +18,7 @@ class ImportExcelController extends Controller
     function import(Request $request)
     {
         $this->validate($request, [
-            'select_file'  => 'required|mimes:xls,xlsx'
+            'select_file'  => 'required|mimes:xls'
         ]);
 
         $data = Excel::import(new UsersImport,$request->file('select_file'));
