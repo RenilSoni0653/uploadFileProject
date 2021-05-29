@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-            <h3 align="center">Import Excel File in Laravel</h3><br/>
+            <h3 align="center">Import Excel File</h3><br/>
             @if(count($errors) > 0)
                 <div class="alert alert-danger">Upload Validation Error<br><br>
                     <ul>
