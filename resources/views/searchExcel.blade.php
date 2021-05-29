@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+<div class="container">
             <h3 align="center">Import Excel File in Laravel</h3><br/>
             @if(count($errors) > 0)
                 <div class="alert alert-danger">Upload Validation Error<br><br>
@@ -59,17 +59,20 @@
                     <th>Gender</th>
                     <th>Address</th>
                 </tr>
-                @foreach($data as $row)
-                <tr>
-                    <td>{{ $row->cust_name }}</td>
-                    <td>{{ $row->gender }}</td>
-                    <td>{{ $row->address }}</td>
-                </tr>
-                @endforeach
-            </table>
-                <div>
-                    {!! $data->links() !!}
+                @if(count($users) > 0)
+                    @foreach($users as $row)
+                    <tr>
+                        <td>{{ $row->cust_name }}</td>
+                        <td>{{ $row->gender }}</td>
+                        <td>{{ $row->address }}</td>
+                    </tr>
+                    @endforeach
+                </table>
+                @else
+                <div class="d-flex justify-content-center">
+                    <td>{{ 'Data Not Found' }}</td>
                 </div>
+                @endif
             </div>
             </div>
         </div>

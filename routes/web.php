@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/import_excel', 'ImportExcelController@index');
 Route::post('/import_excel/import', 'ImportExcelController@import');
+Route::get('/excelsearch', 'ImportExcelController@search')->name('excelsearch');
